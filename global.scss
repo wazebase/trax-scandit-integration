@@ -1,0 +1,132 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Import Exo font */
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+/* Import Azolver styles */
+@import "styles/label";
+@import "styles/input";
+@import "styles/colors";
+@import "styles/toaster";
+@import "styles/button";
+@import "styles/icon";
+@import "styles/select";
+@import "styles/textarea";
+@import "styles/main-screen";
+@import "styles/auth-screen";
+@import "styles/parcel-detail-screen";
+@import "styles/ion-searchbar";
+@import "styles/scanned-items-top-counter";
+@import "styles/popover";
+@import "styles/ion-item";
+
+/*============================
+        Global Styles
+=============================*/
+:root {
+  --ion-font-family: 'Exo', sans-serif;
+}
+
+.logo-size {
+  height: 3.75rem;
+}
+
+.sidebar-logo {
+  position: relative;
+  right: 1.563rem;
+  height: 5rem;
+}
+
+.header-md::after {
+  height: 8px;
+}
+
+.item-interactive {
+  --border-width: 0 0 0px 0;
+}
+
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body.barcode-scanning-active {
+  visibility: hidden;
+  background-color: transparent !important;
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+html.barcode-scanning-active {
+  background-color: transparent !important;
+}
+
+.barcode-scanning-modal {
+  visibility: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+  .barcode-scanning-modal {
+    --background: transparent;
+    --ion-background-color: transparent;
+  }
+}
+
+.alert-message {
+    font-size: 1rem !important;
+  }
+  
+.disabled-link {
+  pointer-events: none;
+  color: $light-gray-color !important;
+}
+
+.ios-no-pad {
+  ion-toolbar {
+    padding-top: 0 !important;
+    --ion-safe-area-top: 0 !important;
+  }
+}
+
+.ios-pad {
+  ion-toolbar {
+    padding-top: 2.5rem !important;
+    --ion-safe-area-top: 0 !important;
+  }
+}
+
+ion-popover [popover]:not(:popover-open):not(dialog[open]) {
+  display: contents;
+}
+
+.dialog-fullscreen .modal-wrapper {
+  width: 100%;
+  height: 100%;
+}
